@@ -1,0 +1,43 @@
+#!/usr/bin/env python3
+# -*- coding=utf-8 -*-
+
+import os
+from setuptools import setup, find_packages
+
+# 打开要安装的 依赖
+with open('requirements.txt') as f:
+    requirements = f.read().splitlines()  # 按行分割 并返回数组
+
+with open('README.rst') as f:  # 读取详情介绍
+    long_description = f.read()  # 长描述
+
+setup(
+    name="setuptools_test",  # 包名
+    version='1.0.1',  # 版本
+    description="setuptools 简单的测试   这里是简单描述",
+    long_description="setuptools 简单的测试   这里是详细描述",
+    author="贾文权",
+    author_email="1173551915@qq.com",
+    url="https://github.com/jiawenquan/py3dtiles",
+    packages=find_packages(),  # 要打包的项目文件夹，如果参数为空表示打包全部
+    include_package_data=True,  # 自动打包文件夹内所有数据
+    install_requires=requirements,  # # 安装依赖的其他包
+    license="MIT",  # 程序的授权信息 协议
+    zip_safe=True,  # 设定项目包为安全，不用每次都检测其安全性,作用未知
+    # 程序的所属分类列表
+    classifiers=[
+        'Development Status :: 1 - Pre-Alpha',
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: MIT License',
+        'Natural Language :: Chinese',
+        'Natural Language :: English',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.6',
+
+    ],
+    test_suite="tests",  # 单元测试工具
+
+    entry_points={
+        'console_scripts': ['setuptools_test=setuptools_test.HelloWorld:main']
+    }
+)
