@@ -1,5 +1,6 @@
 ﻿.idea/
 build/
 dist/
+setuptools_test.egg-info/
 *.bak
 *.pyc
