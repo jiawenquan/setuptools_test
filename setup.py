@@ -1,6 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding=utf-8 -*-
-
 import os
 from setuptools import setup, find_packages
 
@@ -8,7 +5,7 @@ from setuptools import setup, find_packages
 with open('requirements.txt') as f:
     requirements = f.read().splitlines()  # 按行分割 并返回数组
 
-with open('README.rst') as f:  # 读取详情介绍
+with open('README.rst',"rb") as f:  # 读取详情介绍
     long_description = f.read()  # 长描述
 
 setup(
