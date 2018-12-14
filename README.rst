@@ -1,7 +1,6 @@
 ===================================
 setuptools_test |Build Status|
 ===================================
-.. |Build Status| image:: https://github.com/jiawenquan/setuptools_test/docs/unknown.png
    :target: https://github.com/jiawenquan/setuptools_test
 
 
