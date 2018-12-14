@@ -1,3 +1,0 @@
-[console_scripts]
-setuptools_test = setuptools_test.HelloWorld:main
-
