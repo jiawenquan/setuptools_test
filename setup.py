@@ -5,8 +5,14 @@ import os
 from setuptools import setup, find_packages
 
 # 打开要安装的 依赖
-with open('requirements.txt') as f:
-    requirements = f.read().splitlines()  # 按行分割 并返回数组
+if os.path.exists("requirements.txt"):
+    with open('requirements.txt') as f:
+        requirements = f.read().splitlines()  # 按行分割 并返回数组
+elif os.path.exists(find_packages()[0] + ".egg-info/requires.txt"):
+    with open(find_packages()[0] + ".egg-info/requires.txt") as f:
+        requirements = f.read().splitlines()  # 按行分割 并返回数组
+else:
+    requirements = []
 
 with open('README.rst', "rb") as f:  # 读取详情介绍
     long_description = f.read()  # 长描述
@@ -18,7 +24,7 @@ setup(
     long_description="setuptools 简单的测试   这里是详细描述",
     author="贾文权",
     author_email="1173551915@qq.com",
-    url="https://github.com/jiawenquan/py3dtiles",
+    url="https://github.com/jiawenquan/setuptools_test",
     packages=find_packages(),  # 要打包的项目文件夹，如果参数为空表示打包全部
     include_package_data=True,  # 自动打包文件夹内所有数据
     install_requires=requirements,  # # 安装依赖的其他包
